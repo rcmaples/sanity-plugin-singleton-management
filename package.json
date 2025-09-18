@@ -1,13 +1,13 @@
 {
-  "name": "sanity-plugin-singleton-tools",
-  "version": "1.2.0",
+  "name": "sanity-plugin-singleton-management",
+  "version": "0.1.0",
   "description": "A plugin to create and manage singletons in your Sanity Studio",
   "keywords": [
     "sanity",
     "sanity-plugin"
   ],
   "license": "MIT",
-  "author": "RD Pennell <racheal@sanity.io>",
+  "author": "RD Pennell <racheal@sanity.io> & RC Maples <rc@rcmaples.io>",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -44,25 +44,29 @@
   "devDependencies": {
     "@sanity/pkg-utils": "^4.4.0",
     "@sanity/plugin-kit": "^3.1.10",
-    "@types/react": "^18.2.62",
+    "@types/react": "^18.3.24",
     "@typescript-eslint/eslint-plugin": "^7.1.1",
     "@typescript-eslint/parser": "^7.1.1",
     "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-prettier": "^9.1.2",
     "eslint-config-sanity": "^7.1.1",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.34.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
     "prettier-plugin-packagejson": "^2.4.12",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-is": "^18.2.0",
-    "rimraf": "^5.0.5",
-    "sanity": "^3.30.1",
-    "styled-components": "^5.3.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-is": "^18.3.1",
+    "rimraf": "^5.0.10",
+    "sanity": "^4.9.0",
+    "styled-components": "^6.1.15",
     "typescript": "^5.3.3"
+  },
+  "overrides": {
+    "esbuild": "0.25.0",
+    "prismjs": "1.30.0"
   },
   "peerDependencies": {
     "react": "^18 || ^19",

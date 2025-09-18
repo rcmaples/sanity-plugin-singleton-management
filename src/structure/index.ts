@@ -1,5 +1,6 @@
-import { getSingletonDocuments } from "../helpers";
 import { DocumentIcon } from "@sanity/icons";
+
+import { getSingletonDocuments } from "../helpers";
 import {
   SingletonDocumentListItemConfig,
   SingletonPluginListItemsConfig,
@@ -39,7 +40,7 @@ const singletonDocumentListItems = (config: SingletonPluginListItemsConfig) => {
 
   return (
     singletons?.map((schemaType) =>
-      singletonDocumentListItem({ S, context, type: schemaType })
+      singletonDocumentListItem({ S, context, type: schemaType }),
     ) || []
   );
 };
@@ -57,12 +58,12 @@ const filteredDocumentListItems = (config: SingletonPluginListItemsConfig) => {
   const singletons = getSingletonDocuments(schema);
 
   return S.documentTypeListItems().filter(
-    (type) => singletons && !singletons.includes(type.getId() as string)
+    (type) => singletons && !singletons.includes(type.getId() as string),
   );
 };
 
 export {
+  filteredDocumentListItems,
   singletonDocumentListItem,
   singletonDocumentListItems,
-  filteredDocumentListItems,
 };

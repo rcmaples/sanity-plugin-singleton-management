@@ -1,6 +1,6 @@
-import { ConfigContext, SanityDocument } from 'sanity';
-import { StructureBuilder } from 'sanity/structure';
-import { ComponentType, ReactNode } from 'react';
+import { ComponentType, ReactNode } from "react";
+import { ConfigContext, SanityDocument } from "sanity";
+import { StructureBuilder } from "sanity/structure";
 
 export interface SingletonDocumentListItemConfig {
   S: StructureBuilder;
@@ -26,6 +26,6 @@ export interface SanitySingletonDocument extends SanityDocument {
   };
 }
 
-declare module 'sanity' {
+declare module "sanity" {
   interface DocumentOptions extends SingletonPluginOptions {}
 }
