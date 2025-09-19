@@ -58,3 +58,16 @@ yalc.lock
 
 # Compiled plugin
 dist
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Vitest coverage reports
+coverage/
+
+# Test output
+test-results/
+test-results.xml
+
+# ESLint cache
+.eslintcache
