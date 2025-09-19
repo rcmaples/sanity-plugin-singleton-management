@@ -1,10 +1,11 @@
-import { definePlugin } from 'sanity';
-import { newDocumentOptions } from './newDocumentOptions';
-import { actions } from './actions';
+import { definePlugin } from "sanity";
 
-export const singletonTools = definePlugin(options => {
+import { actions } from "./actions";
+import { newDocumentOptions } from "./newDocumentOptions";
+
+export const singletonTools = definePlugin(() => {
   return {
-    name: 'singleton-tools',
+    name: "singleton-tools",
     document: {
       newDocumentOptions,
       actions,

@@ -1,79 +1,106 @@
 {
-  "name": "sanity-plugin-singleton-tools",
-  "version": "1.2.0",
-  "description": "A plugin to create and manage singletons in your Sanity Studio",
+  "name": "sanity-plugin-singleton-management",
+  "version": "0.1.0",
+  "description": "A plugin to streamline singleton management in your Sanity Studio",
   "keywords": [
     "sanity",
     "sanity-plugin"
   ],
   "license": "MIT",
-  "author": "RD Pennell <racheal@sanity.io>",
+  "author": "RD Pennell <racheal@sanity.io> & RC Maples <rc@rcmaples.io>",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
       "source": "./src/index.ts",
-      "require": "./dist/index.js",
       "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs",
       "default": "./dist/index.esm.js"
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
+  "type": "module",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
-  "source": "./src/index.ts",
   "types": "./dist/index.d.ts",
+  "browserslist": "extends @sanity/browserslist-config",
   "files": [
     "dist",
     "sanity.json",
     "src",
-    "v2-incompatible.js"
+    "v2-incompatible.js",
+    "!src/__tests__",
+    "!src/__mocks__"
   ],
   "scripts": {
-    "build": "run-s clean && plugin-kit verify-package --silent && pkg-utils build --strict && pkg-utils --strict",
+    "build": "npm run clean && npx @sanity/pkg-utils build --strict",
     "clean": "rimraf dist",
     "format": "prettier --write --cache --ignore-unknown .",
     "link-watch": "plugin-kit link-watch",
     "lint": "eslint .",
+    "prepare": "husky",
     "prepublishOnly": "run-s build",
-    "watch": "pkg-utils watch --strict"
+    "watch": "pkg-utils watch --strict",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@sanity/icons": "^3.7.4",
     "@sanity/incompatible-plugin": "^1.0.4"
   },
   "devDependencies": {
-    "@sanity/pkg-utils": "^4.4.0",
-    "@sanity/plugin-kit": "^3.1.10",
-    "@types/react": "^18.2.62",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "@sanity/browserslist-config": "^1.0.5",
+    "@sanity/pkg-utils": "^8.1.12",
+    "@sanity/plugin-kit": "^4.0.19",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.6",
+    "@semantic-release/npm": "^12.0.2",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@types/react": "^19.1.13",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "eslint": "^9.35.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-config-sanity": "^7.1.1",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.34.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "husky": "^9.1.7",
+    "jsdom": "^27.0.0",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
     "prettier-plugin-packagejson": "^2.4.12",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-is": "^18.2.0",
-    "rimraf": "^5.0.5",
-    "sanity": "^3.30.1",
-    "styled-components": "^5.3.11",
-    "typescript": "^5.3.3"
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-is": "^19.1.1",
+    "rimraf": "^6.0.1",
+    "sanity": "^4.9.0",
+    "semantic-release": "^24.2.8",
+    "styled-components": "^6.1.15",
+    "typescript": "^5.3.3",
+    "typescript-eslint": "^8.44.0",
+    "vitest": "^3.2.4"
+  },
+  "overrides": {
+    "esbuild": "0.25.0",
+    "prismjs": "1.30.0",
+    "tmp": "0.2.4"
   },
   "peerDependencies": {
     "react": "^18 || ^19",
     "sanity": "^3 || ^4"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=20"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/plsrd/sanity-plugin-singleton"
+    "url": "https://github.com/rcmaples/sanity-plugin-singleton-management"
   },
   "sideEffects": true
 }

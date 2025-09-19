@@ -1,9 +1,14 @@
 {
   "extends": "./tsconfig.settings",
   "include": ["./src", "./package.config.ts"],
+  "exclude": ["src/__tests__", "src/__mocks__"],
   "compilerOptions": {
     "rootDir": ".",
     "jsx": "react-jsx",
-    "noEmit": true
+    "noEmit": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   }
 }

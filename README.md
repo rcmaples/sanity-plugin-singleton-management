@@ -1,10 +1,12 @@
+[![CI](https://github.com/rcmaples/sanity-plugin-singleton-management/actions/workflows/ci.yml/badge.svg)](https://github.com/rcmaples/sanity-plugin-singleton-management/actions/workflows/ci.yml) [![codecov](https://codecov.io/github/rcmaples/sanity-plugin-singleton-management/graph/badge.svg?token=WYKSA756IY)](https://codecov.io/github/rcmaples/sanity-plugin-singleton-management)
+
 # sanity-plugin-singleton-tools
 
-> This is a **Sanity Studio v3** plugin.
+> This is compatible with v4 and v3 of Sanity Studio.
 
 ## What does this plugin do?
 
-This plugin adds convenience functions to reduce the overhead of creating [single edit](https://www.sanity.io/docs/create-a-link-to-a-single-edit-page-in-your-main-document-type-list) (singleton) documents in the [Sanity Studio](https://www.sanity.io).
+This plugin adds convenience functions to reduce the overhead of creating [singleton](https://www.sanity.io/docs/studio/structure-builder-cheat-sheet#k5cd7ca204386) documents in the [Sanity Studio](https://www.sanity.io).
 
 In short, this does the following:
 
@@ -12,11 +14,106 @@ In short, this does the following:
 - Removes the ability to create new versions of the singleton document in both the global Create menu and Structure.
 - Adds simple methods for customizing the way your singletons are listed in your Studio's Structure.
 
+## Why Use This Plugin vs. Native Sanity Approaches?
+
+While Sanity Studio supports singleton documents through the Structure Builder API, this
+plugin eliminates the repetitive boilerplate and provides additional safeguards:
+
+### Native Sanity Approach
+```js
+// Requires manual Structure Builder configuration for each singleton
+export const structure = (S) =>
+  S.list()
+    .title('Content')
+    .items([
+      S.listItem()
+        .title('Site Settings')
+        .child(
+          S.document()
+            .schemaType('siteSettings')
+            .documentId('siteSettings')
+        ),
+      // Must manually filter out singletons from main list
+      ...S.documentTypeListItems().filter(listItem =>
+        !['siteSettings'].includes(listItem.getId()))
+    ])
+```
+
+**Issues:**
+
+- Repetitive boilerplate for each singleton
+- No prevention of duplicate document creation
+- Users can still create new versions via global Create menu
+- Manual filtering required to prevent duplicates in document lists
+
+
+**With This Plugin:**
+
+```js
+  // Schema configuration
+  export const siteSettings = {
+    name: 'siteSettings',
+    type: 'document',
+    options: { singleton: true } // That's it!
+  }
+
+  // Structure configuration
+  export const structure = (S, context) =>
+    S.list()
+      .items([
+        ...singletonDocumentListItems({ S, context }), // Auto-generates all singletons
+        ...filteredDocumentListItems({ S, context })   // Auto-filters singletons from main list
+      ])
+```
+
+  Benefits:
+  - ✅ Minimal configuration with `singleton: true`
+  - ✅ Automatic action restrictions (no duplicate creation)
+  - ✅ Global Create menu integration
+  - ✅ Helper functions eliminate boilerplate
+  - ✅ Consistent singleton behavior across your studio
+
 ## Installation
 
 ```sh
-npm install sanity-plugin-singleton-tools
+npm install sanity-plugin-singleton-management
 ```
+
+## Migration from sanity-plugin-singleton-tools
+
+This plugin is a modernized, actively maintained fork of `sanity-plugin-singleton-tools` with identical API compatibility. Migration is straightforward:
+
+### Steps
+1. **Uninstall the old package**:
+   ```sh
+   npm uninstall sanity-plugin-singleton-tools
+   ```
+
+2. **Install this package**:
+   ```sh
+   npm install sanity-plugin-singleton-management
+   ```
+
+3. **Update your import statements**:
+   ```diff
+   // sanity.config.js
+   - import { singletonTools } from 'sanity-plugin-singleton-tools'
+   + import { singletonTools } from 'sanity-plugin-singleton-management'
+
+   // structure.js
+   - import { singletonDocumentListItem } from 'sanity-plugin-singleton-tools'
+   + import { singletonDocumentListItem } from 'sanity-plugin-singleton-management'
+   ```
+
+**That's it!** No other code changes are required. Your existing schema configurations and structure customizations will work exactly the same.
+
+### What's New
+- ✅ **React 18/19 Support**: Compatible with modern React versions
+- ✅ **Sanity v3/v4 Support**: Works with both Sanity Studio versions
+- ✅ **Modern Tooling**: ESM/CommonJS dual package, better TypeScript support
+- ✅ **Comprehensive Tests**: 100% test coverage for reliability
+- ✅ **Active Maintenance**: Regular updates and dependency management
+- ✅ **Node 18+ Support**: Modern Node.js compatibility
 
 ## Usage
 
@@ -24,8 +121,8 @@ npm install sanity-plugin-singleton-tools
 
 ```js
 //sanity.config.js
-import { defineConfig } from 'sanity';
-import { singletonTools } from 'sanity-plugin-singleton-tools';
+import { defineConfig } from "sanity";
+import { singletonTools } from "sanity-plugin-singleton-management";
 
 export default defineConfig({
   //...
@@ -38,9 +135,9 @@ export default defineConfig({
 ```js
 //mySingleton.js
 export const mySingleton = {
-  name: 'mySingleton',
-  title: 'My Singleton',
-  type: 'document',
+  name: "mySingleton",
+  title: "My Singleton",
+  type: "document",
   options: {
     singleton: true, // Identify this document as a singleton
   },
@@ -55,12 +152,12 @@ import {
   singletonDocumentListItem,
   singletonDocumentListItems,
   filteredDocumentListItems,
-} from 'sanity-plugin-singleton-tools';
-import { PlugIcon } from '@sanity/icons';
+} from "sanity-plugin-singleton-management";
+import { PlugIcon } from "@sanity/icons";
 
 export const structure = (S, context) =>
   S.list()
-    .title('Sanity Love Content')
+    .title("Sanity Love Content")
     .items([
       // Create a list item for each singleton document in your schema that links directly to a document view
       ...singletonDocumentListItems({ S, context }),
@@ -69,11 +166,11 @@ export const structure = (S, context) =>
         S,
         context,
         // Schema type
-        type: 'mySingleton',
+        type: "mySingleton",
         // Required for showing multiple singletons of the same schema type
-        title: 'My Singleton',
+        title: "My Singleton",
         // Required for showing multiple singletons of the same schema type
-        id: 'mySingleton',
+        id: "mySingleton",
         // Specify a custom icon
         icon: PlugIcon,
       }),
@@ -83,19 +180,14 @@ export const structure = (S, context) =>
     ]);
 ```
 
-## Notes
+## Appendix
 
-**Notice something wrong with my TS?**
-I'm stubborn and refuse to use TS, therefore I am a TS baby. If you notice something wrong with my implementation please let me know!
+Other reading (Sanity docs):
+
+- [Singleton documents](https://www.sanity.io/docs/studio/structure-builder-cheat-sheet#k5cd7ca204386)
+- [Filtering out singletons in Structure](https://www.sanity.io/docs/studio/create-a-link-to-a-single-edit-page-in-your-main-document-type-list#fa1e82fd32be)
+- [Creating a link to a single edit page](https://www.sanity.io/docs/studio/create-a-link-to-a-single-edit-page-in-your-main-document-type-list)
 
 ## License
 
-[MIT](LICENSE) © RD Pennell
-
-## Develop & test
-
-This plugin uses [@sanity/plugin-kit](https://github.com/sanity-io/plugin-kit)
-with default configuration for build & watch scripts.
-
-See [Testing a plugin in Sanity Studio](https://github.com/sanity-io/plugin-kit#testing-a-plugin-in-sanity-studio)
-on how to run this plugin with hotreload in the studio.
+[MIT](LICENSE) © RD Pennell & RC Maples

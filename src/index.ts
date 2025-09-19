@@ -1,13 +1,13 @@
+import { singletonTools } from "./pluginConfig";
 import {
+  filteredDocumentListItems,
   singletonDocumentListItem,
   singletonDocumentListItems,
-  filteredDocumentListItems,
-} from './structure';
-import { singletonTools } from './pluginConfig';
+} from "./structure";
 
 export {
-  singletonTools,
+  filteredDocumentListItems,
   singletonDocumentListItem,
   singletonDocumentListItems,
-  filteredDocumentListItems,
+  singletonTools,
 };

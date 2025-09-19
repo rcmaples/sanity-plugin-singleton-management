@@ -1,11 +1,9 @@
-const {showIncompatiblePluginDialog} = require('@sanity/incompatible-plugin')
-const {name, version, sanityExchangeUrl} = require('./package.json')
+import { showIncompatiblePluginDialog } from "@sanity/incompatible-plugin";
 
 export default showIncompatiblePluginDialog({
-  name: name,
+  name: "sanity-plugin-singleton-management",
   versions: {
-    v3: version,
+    v3: "0.1.0",
     v2: undefined,
   },
-  sanityExchangeUrl,
-})
+});
