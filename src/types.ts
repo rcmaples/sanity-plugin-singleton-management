@@ -27,5 +27,6 @@ export interface SanitySingletonDocument extends SanityDocument {
 }
 
 declare module "sanity" {
+  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
   interface DocumentOptions extends SingletonPluginOptions {}
 }

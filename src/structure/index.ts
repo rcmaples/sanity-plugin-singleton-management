@@ -1,4 +1,5 @@
 import { DocumentIcon } from "@sanity/icons";
+import type { ListItemBuilder } from "sanity/structure";
 
 import { getSingletonDocuments } from "../helpers";
 import {
@@ -6,7 +7,9 @@ import {
   SingletonPluginListItemsConfig,
 } from "../types";
 
-const singletonDocumentListItem = (config: SingletonDocumentListItemConfig) => {
+const singletonDocumentListItem = (
+  config: SingletonDocumentListItemConfig,
+): ListItemBuilder => {
   if (!config?.S || !config?.type || !config.context) {
     throw new Error(`
       S, context, and type must be provided to your singletonDocumentListItem
@@ -25,7 +28,9 @@ const singletonDocumentListItem = (config: SingletonDocumentListItemConfig) => {
     .child(S.document().schemaType(type).title(listTitle).id(listId));
 };
 
-const singletonDocumentListItems = (config: SingletonPluginListItemsConfig) => {
+const singletonDocumentListItems = (
+  config: SingletonPluginListItemsConfig,
+): ListItemBuilder[] => {
   if (!config.S || !config.context) {
     throw new Error(`
       S and context must be provided
@@ -45,7 +50,9 @@ const singletonDocumentListItems = (config: SingletonPluginListItemsConfig) => {
   );
 };
 
-const filteredDocumentListItems = (config: SingletonPluginListItemsConfig) => {
+const filteredDocumentListItems = (
+  config: SingletonPluginListItemsConfig,
+): ListItemBuilder[] => {
   if (!config.S || !config.context) {
     throw new Error(`
       S and context must be provided
@@ -58,7 +65,7 @@ const filteredDocumentListItems = (config: SingletonPluginListItemsConfig) => {
   const singletons = getSingletonDocuments(schema);
 
   return S.documentTypeListItems().filter(
-    (type) => singletons && !singletons.includes(type.getId() as string),
+    (type) => !singletons || !singletons.includes(type.getId() as string),
   );
 };
 

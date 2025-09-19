@@ -26,5 +26,15 @@ module.exports = {
     'dist/',
     'node_modules/',
     '*.js'
+  ],
+  overrides: [
+    {
+      files: ['**/__tests__/**/*', '**/__mocks__/**/*', '**/*.test.*', '**/*.spec.*'],
+      rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        'max-nested-callbacks': 'off'
+      }
+    }
   ]
 }

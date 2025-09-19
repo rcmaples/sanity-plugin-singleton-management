@@ -35,7 +35,11 @@
     "link-watch": "plugin-kit link-watch",
     "lint": "eslint .",
     "prepublishOnly": "run-s build",
-    "watch": "pkg-utils watch --strict"
+    "watch": "pkg-utils watch --strict",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:run": "vitest run",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@sanity/icons": "^3.7.4",
@@ -45,8 +49,8 @@
     "@sanity/pkg-utils": "^4.4.0",
     "@sanity/plugin-kit": "^3.1.10",
     "@types/react": "^18.3.24",
-    "@typescript-eslint/eslint-plugin": "^7.1.1",
-    "@typescript-eslint/parser": "^7.1.1",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.2",
     "eslint-config-sanity": "^7.1.1",
@@ -62,7 +66,11 @@
     "rimraf": "^5.0.10",
     "sanity": "^4.9.0",
     "styled-components": "^6.1.15",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^1.6.0",
+    "@vitest/ui": "^1.6.0",
+    "jsdom": "^24.1.0",
+    "@testing-library/jest-dom": "^6.4.6"
   },
   "overrides": {
     "esbuild": "0.25.0",
@@ -73,11 +81,11 @@
     "sanity": "^3 || ^4"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=20"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/plsrd/sanity-plugin-singleton"
+    "url": "https://github.com/rcmaples/sanity-plugin-singleton-management"
   },
   "sideEffects": true
 }
