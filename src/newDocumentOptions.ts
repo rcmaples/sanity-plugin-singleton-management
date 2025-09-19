@@ -11,7 +11,7 @@ export const newDocumentOptions: NewDocumentOptionsResolver = (
   const filterSingletons = ({ templateId }: { templateId: string }) =>
     !singletons?.includes(templateId);
 
-  if (type == "global") return prev.filter(filterSingletons);
+  if (type === "global") return prev.filter(filterSingletons);
 
   return singletons?.includes(schemaType ?? "")
     ? prev.filter(filterSingletons)

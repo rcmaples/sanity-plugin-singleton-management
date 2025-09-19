@@ -31,7 +31,7 @@
     "!src/__mocks__"
   ],
   "scripts": {
-    "build": "npm run clean && npx @sanity/plugin-kit verify-package --silent && npx @sanity/pkg-utils build --strict && npx @sanity/pkg-utils --strict",
+    "build": "npm run clean && npx @sanity/pkg-utils build --strict",
     "clean": "rimraf dist",
     "format": "prettier --write --cache --ignore-unknown .",
     "link-watch": "plugin-kit link-watch",
@@ -54,6 +54,10 @@
     "@sanity/browserslist-config": "^1.0.5",
     "@sanity/pkg-utils": "^8.1.12",
     "@sanity/plugin-kit": "^4.0.19",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.6",
+    "@semantic-release/npm": "^12.0.2",
     "@testing-library/jest-dom": "^6.4.6",
     "@types/react": "^19.1.13",
     "@typescript-eslint/eslint-plugin": "^8.44.0",
@@ -76,6 +80,7 @@
     "react-is": "^19.1.1",
     "rimraf": "^6.0.1",
     "sanity": "^4.9.0",
+    "semantic-release": "^24.2.8",
     "styled-components": "^6.1.15",
     "typescript": "^5.3.3",
     "typescript-eslint": "^8.44.0",

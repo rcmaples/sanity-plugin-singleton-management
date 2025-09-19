@@ -52,6 +52,7 @@ The plugin extends Sanity's type system through module augmentation to add singl
 ## Plugin Integration
 
 Users integrate this plugin by:
+
 1. Adding `singletonTools()` to their Sanity config plugins array
 2. Marking document schemas with `options: { singleton: true }`
 3. Using the exported structure helpers in their Studio structure configuration
@@ -67,23 +68,30 @@ Users integrate this plugin by:
 ## Maintenance
 
 ### Testing
+
 - `npm test` - Interactive test runner
 - `npm run test:run` - Single test run
 - `npm run test:coverage` - Coverage reports
 
 ### Dependencies
+
 - Dependabot configured for weekly updates
 - Manual updates: check compatibility with Sanity ecosystem first
 - Test against both React 18 and 19 when updating React types
 
 ### Branch Protection & CI/CD
+
 - Main branch protected with required status checks
 - All PRs require 1 approving review
 - CI validates: commit messages, security audits, linting, tests, builds
 - Dependabot auto-merges minor/patch updates, flags major updates
 
 ### Release Process
-1. Update version and CHANGELOG.md
-2. Ensure CI passes on all Node versions (18, 20, 22)
-3. Tag release: `git tag v1.x.x && git push --tags`
-4. GitHub Actions will automatically publish to NPM
+
+Fully automated with semantic-release:
+
+1. Push conventional commits to main branch
+2. Semantic-release automatically determines version based on commit types
+3. CHANGELOG.md is auto-generated from conventional commits
+4. GitHub releases and NPM publishing happen automatically
+5. Version bumps: feat = minor, fix = patch, BREAKING CHANGE = major

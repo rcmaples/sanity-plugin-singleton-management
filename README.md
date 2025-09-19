@@ -1,6 +1,6 @@
 # sanity-plugin-singleton-tools
 
-> This is a **Sanity Studio v3** plugin.
+> This is compatible with v4 and v3 of Sanity Studio.
 
 ## What does this plugin do?
 
@@ -24,8 +24,8 @@ npm install sanity-plugin-singleton-tools
 
 ```js
 //sanity.config.js
-import { defineConfig } from 'sanity';
-import { singletonTools } from 'sanity-plugin-singleton-tools';
+import { defineConfig } from "sanity";
+import { singletonTools } from "sanity-plugin-singleton-tools";
 
 export default defineConfig({
   //...
@@ -38,9 +38,9 @@ export default defineConfig({
 ```js
 //mySingleton.js
 export const mySingleton = {
-  name: 'mySingleton',
-  title: 'My Singleton',
-  type: 'document',
+  name: "mySingleton",
+  title: "My Singleton",
+  type: "document",
   options: {
     singleton: true, // Identify this document as a singleton
   },
@@ -55,12 +55,12 @@ import {
   singletonDocumentListItem,
   singletonDocumentListItems,
   filteredDocumentListItems,
-} from 'sanity-plugin-singleton-tools';
-import { PlugIcon } from '@sanity/icons';
+} from "sanity-plugin-singleton-tools";
+import { PlugIcon } from "@sanity/icons";
 
 export const structure = (S, context) =>
   S.list()
-    .title('Sanity Love Content')
+    .title("Sanity Love Content")
     .items([
       // Create a list item for each singleton document in your schema that links directly to a document view
       ...singletonDocumentListItems({ S, context }),
@@ -69,11 +69,11 @@ export const structure = (S, context) =>
         S,
         context,
         // Schema type
-        type: 'mySingleton',
+        type: "mySingleton",
         // Required for showing multiple singletons of the same schema type
-        title: 'My Singleton',
+        title: "My Singleton",
         // Required for showing multiple singletons of the same schema type
-        id: 'mySingleton',
+        id: "mySingleton",
         // Specify a custom icon
         icon: PlugIcon,
       }),
@@ -83,19 +83,6 @@ export const structure = (S, context) =>
     ]);
 ```
 
-## Notes
-
-**Notice something wrong with my TS?**
-I'm stubborn and refuse to use TS, therefore I am a TS baby. If you notice something wrong with my implementation please let me know!
-
 ## License
 
-[MIT](LICENSE) © RD Pennell
-
-## Develop & test
-
-This plugin uses [@sanity/plugin-kit](https://github.com/sanity-io/plugin-kit)
-with default configuration for build & watch scripts.
-
-See [Testing a plugin in Sanity Studio](https://github.com/sanity-io/plugin-kit#testing-a-plugin-in-sanity-studio)
-on how to run this plugin with hotreload in the studio.
+[MIT](LICENSE) © RD Pennell & RC Maples
