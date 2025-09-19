@@ -15,6 +15,10 @@ This is a Sanity Studio v3 plugin called `sanity-plugin-singleton-management` th
 - `npm run watch` - Watch mode for development with hot reloading
 - `npm run link-watch` - Link and watch for development with hot reloading in a Sanity Studio
 
+## Commit Messages
+
+This project uses [Conventional Commits](https://www.conventionalcommits.org/) with automated validation via commitlint. All commits must follow the format: `<type>: <description>` (e.g., `feat: add new functionality`, `fix: resolve bug`, `docs: update README`). The commit-msg hook will automatically validate your commit messages.
+
 ## Architecture
 
 ### Core Plugin Structure
@@ -54,7 +58,32 @@ Users integrate this plugin by:
 
 ## Development Notes
 
-- Built using `@sanity/plugin-kit` with TypeScript
-- Uses ESLint with Sanity's configuration and Prettier for code formatting
-- Supports both Sanity v3 and v4 through peer dependencies
-- Plugin includes v2 incompatibility handling via `sanity.json` and `v2-incompatible.js`
+- Built using `@sanity/plugin-kit` with TypeScript and ESM
+- Uses ESLint v9 flat config with Prettier formatting
+- Comprehensive test suite with Vitest (46 tests)
+- Supports React 18/19 and Sanity v3/v4 through peer dependencies
+- ESM package with dual CJS/ESM exports for maximum compatibility
+
+## Maintenance
+
+### Testing
+- `npm test` - Interactive test runner
+- `npm run test:run` - Single test run
+- `npm run test:coverage` - Coverage reports
+
+### Dependencies
+- Dependabot configured for weekly updates
+- Manual updates: check compatibility with Sanity ecosystem first
+- Test against both React 18 and 19 when updating React types
+
+### Branch Protection & CI/CD
+- Main branch protected with required status checks
+- All PRs require 1 approving review
+- CI validates: commit messages, security audits, linting, tests, builds
+- Dependabot auto-merges minor/patch updates, flags major updates
+
+### Release Process
+1. Update version and CHANGELOG.md
+2. Ensure CI passes on all Node versions (18, 20, 22)
+3. Tag release: `git tag v1.x.x && git push --tags`
+4. GitHub Actions will automatically publish to NPM
