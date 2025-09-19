@@ -1,5 +1,6 @@
 export default {
   extends: ["@commitlint/config-conventional"],
+  ignores: [(message) => /^chore\(release\):/.test(message)],
   rules: {
     "type-enum": [
       2,
