@@ -45,7 +45,8 @@ jobs:
         run: npm run build
 
       - name: Upload coverage reports
-        if: matrix.node-version == 20
-        uses: codecov/codecov-action@v4
+        # if: matrix.node-version == 20
+        uses: codecov/codecov-action@v5
         with:
-          file: ./coverage/coverage-final.json
+          token: ${{ secrets.CODECOV_TOKEN }}
+          # file: ./coverage/coverage-final.json

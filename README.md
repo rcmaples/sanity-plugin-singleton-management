@@ -1,3 +1,5 @@
+[![CI](https://github.com/rcmaples/sanity-plugin-singleton-management/actions/workflows/ci.yml/badge.svg)](https://github.com/rcmaples/sanity-plugin-singleton-management/actions/workflows/ci.yml) [![codecov](https://codecov.io/github/rcmaples/sanity-plugin-singleton-management/graph/badge.svg?token=WYKSA756IY)](https://codecov.io/github/rcmaples/sanity-plugin-singleton-management)
+
 # sanity-plugin-singleton-tools
 
 > This is compatible with v4 and v3 of Sanity Studio.
