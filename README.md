@@ -74,8 +74,44 @@ export const structure = (S) =>
 ## Installation
 
 ```sh
-npm install sanity-plugin-singleton-tools
+npm install sanity-plugin-singleton-management
 ```
+
+## Migration from sanity-plugin-singleton-tools
+
+This plugin is a modernized, actively maintained fork of `sanity-plugin-singleton-tools` with identical API compatibility. Migration is straightforward:
+
+### Steps
+1. **Uninstall the old package**:
+   ```sh
+   npm uninstall sanity-plugin-singleton-tools
+   ```
+
+2. **Install this package**:
+   ```sh
+   npm install sanity-plugin-singleton-management
+   ```
+
+3. **Update your import statements**:
+   ```diff
+   // sanity.config.js
+   - import { singletonTools } from 'sanity-plugin-singleton-tools'
+   + import { singletonTools } from 'sanity-plugin-singleton-management'
+
+   // structure.js
+   - import { singletonDocumentListItem } from 'sanity-plugin-singleton-tools'
+   + import { singletonDocumentListItem } from 'sanity-plugin-singleton-management'
+   ```
+
+**That's it!** No other code changes are required. Your existing schema configurations and structure customizations will work exactly the same.
+
+### What's New
+- ✅ **React 18/19 Support**: Compatible with modern React versions
+- ✅ **Sanity v3/v4 Support**: Works with both Sanity Studio versions
+- ✅ **Modern Tooling**: ESM/CommonJS dual package, better TypeScript support
+- ✅ **Comprehensive Tests**: 100% test coverage for reliability
+- ✅ **Active Maintenance**: Regular updates and dependency management
+- ✅ **Node 18+ Support**: Modern Node.js compatibility
 
 ## Usage
 
@@ -84,7 +120,7 @@ npm install sanity-plugin-singleton-tools
 ```js
 //sanity.config.js
 import { defineConfig } from "sanity";
-import { singletonTools } from "sanity-plugin-singleton-tools";
+import { singletonTools } from "sanity-plugin-singleton-management";
 
 export default defineConfig({
   //...
@@ -114,7 +150,7 @@ import {
   singletonDocumentListItem,
   singletonDocumentListItems,
   filteredDocumentListItems,
-} from "sanity-plugin-singleton-tools";
+} from "sanity-plugin-singleton-management";
 import { PlugIcon } from "@sanity/icons";
 
 export const structure = (S, context) =>
