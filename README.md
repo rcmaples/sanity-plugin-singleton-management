@@ -50,14 +50,29 @@ export const structure = (S) =>
 **With This Plugin:**
 
 ```js
-  // Schema configuration
-  export const siteSettings = {
-    name: 'siteSettings',
-    type: 'document',
-    options: { singleton: true } // That's it!
-  }
+  // schema/singletonType.js/ts
+import { defineType } from 'sanity';
 
-  // Structure configuration
+export const mySingleton = defineType({
+  name: 'mySingleton',
+  title: 'My Singleton',
+  type: 'document',
+  options: {
+    singleton: true, // Identify this document as a singleton
+  },
+  fields: [
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'string',
+    },
+    ...
+  ],
+});
+```
+
+```js
+  // structure.js/ts
   export const structure = (S, context) =>
     S.list()
       .items([

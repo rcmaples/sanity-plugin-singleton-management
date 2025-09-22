@@ -5,6 +5,8 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+    
 
 jobs:
   test:
@@ -38,15 +40,17 @@ jobs:
       - name: Run linting
         run: npm run lint
 
-      - name: Run tests
-        run: npm run test:run
+      - name: Run tests with coverage
+        run: npm run test:coverage
 
       - name: Run build
         run: npm run build
 
       - name: Upload coverage reports
-        # if: matrix.node-version == 20
+        if: matrix.node-version == 20
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          # file: ./coverage/coverage-final.json
+          files: ./coverage/lcov.info
+          fail_ci_if_error: false
+          verbose: true
