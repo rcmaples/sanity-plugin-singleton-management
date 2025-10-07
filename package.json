@@ -50,7 +50,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
-    "@commitlint/config-conventional": "^19.8.1",
+    "@commitlint/config-conventional": "^20.0.0",
     "@sanity/browserslist-config": "^1.0.5",
     "@sanity/pkg-utils": "^8.1.13",
     "@sanity/plugin-kit": "^4.0.19",
