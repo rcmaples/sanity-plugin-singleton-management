@@ -1,6 +1,6 @@
 {
   "name": "sanity-plugin-singleton-management",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A plugin to streamline singleton management in your Sanity Studio",
   "keywords": [
     "sanity",
