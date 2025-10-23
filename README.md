@@ -205,4 +205,4 @@ Other reading (Sanity docs):
 
 ## License
 
-[MIT](LICENSE) © RD Pennell & RC Maples
+[MIT](LICENSE) © [RD Pennell](https://github.com/plsrd) & RC Maples
