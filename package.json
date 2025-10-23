@@ -33,6 +33,7 @@
   "scripts": {
     "build": "npm run clean && npx @sanity/pkg-utils build --strict",
     "clean": "rimraf dist",
+    "commit": "commit",
     "format": "prettier --write --cache --ignore-unknown .",
     "link-watch": "plugin-kit link-watch",
     "lint": "eslint .",
@@ -51,6 +52,7 @@
   "devDependencies": {
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
+    "@commitlint/prompt-cli": "^20.1.0",
     "@sanity/browserslist-config": "^1.0.5",
     "@sanity/pkg-utils": "^8.1.24",
     "@sanity/plugin-kit": "^4.0.20",
