@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.0...v1.0.1) (2025-10-23)
+
+
+### Bug Fixes
+
+* force minor release ([6daab91](https://github.com/rcmaples/sanity-plugin-singleton-management/commit/6daab91073ab464e95ea111f978679b4e6cdd66a))
+
 # 1.0.0 (2025-09-19)
 
 
