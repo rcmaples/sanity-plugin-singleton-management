@@ -203,6 +203,17 @@ Other reading (Sanity docs):
 - [Filtering out singletons in Structure](https://www.sanity.io/docs/studio/create-a-link-to-a-single-edit-page-in-your-main-document-type-list#fa1e82fd32be)
 - [Creating a link to a single edit page](https://www.sanity.io/docs/studio/create-a-link-to-a-single-edit-page-in-your-main-document-type-list)
 
+## Credits
+
+This project is a fork of [sanity-plugin-singleton-tools](https://github.com/plsrd/sanity-plugin-singleton-tools) 
+originally created by [RD Pennell](https://github.com/plsrd).
+
 ## License
 
-[MIT](LICENSE) © [RD Pennell](https://github.com/plsrd) & RC Maples
+MIT License \
+[LICENSE](LICENSE)
+
+<div style="text-align: right">
+Copyright © 2025 <a href="https://github.com/rcmaples" target="_blank">RC Maples</a> </br>
+Copyright © 2024-2025 <a href="https://github.com/plsrd" target="_blank">RD Pennell</a>
+</div>
