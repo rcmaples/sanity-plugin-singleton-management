@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.2...v1.0.3) (2025-10-27)
+
+
+### Bug Fixes
+
+* updating deps for package-lock ([2fa1c28](https://github.com/rcmaples/sanity-plugin-singleton-management/commit/2fa1c28e4b90a2b86a08ff6a77e68bc095ad3e5f))
+
 ## [1.0.2](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.1...v1.0.2) (2025-10-27)
 
 
