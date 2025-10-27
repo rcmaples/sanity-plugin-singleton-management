@@ -71,3 +71,8 @@ test-results.xml
 
 # ESLint cache
 .eslintcache
+
+.env*
+!.env.example
+.secrets*
+!.secrets.example
