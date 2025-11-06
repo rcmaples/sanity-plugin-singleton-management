@@ -50,7 +50,7 @@ jobs:
         run: npx semantic-release --dry-run
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          # NPM_TOKEN intentionally omitted to test OIDC-only flow
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Test Summary
         if: always()
