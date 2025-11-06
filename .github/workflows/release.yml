@@ -41,5 +41,5 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          # NPM_TOKEN removed - using trusted publishing via OIDC instead
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           HUSKY: 0
