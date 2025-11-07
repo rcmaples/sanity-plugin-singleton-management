@@ -59,6 +59,8 @@
     "@sanity/browserslist-config": "^1.0.5",
     "@sanity/pkg-utils": "^8.1.24",
     "@sanity/plugin-kit": "^4.0.20",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
     "@testing-library/jest-dom": "^6.4.6",
     "@types/react": "^19.1.13",
     "@typescript-eslint/eslint-plugin": "^8.44.0",
@@ -98,7 +100,7 @@
     "sanity": "^3 || ^4"
   },
   "engines": {
-    "node": ">=20"
+    "node": "^20.19.5 || ^22.21.1 || >= 24.10.0"
   },
   "repository": {
     "type": "git",
