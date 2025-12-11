@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.4...v1.0.5) (2025-12-11)
+
+
+### Bug Fixes
+
+* **deps:** require patched React versions to address CVE-2025-55182 ([fd77b0c](https://github.com/rcmaples/sanity-plugin-singleton-management/commit/fd77b0c7fbae8263ffffb99500e9292da20eeeb5))
+
 ## [1.0.4](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.3...v1.0.4) (2025-11-07)
 
 
