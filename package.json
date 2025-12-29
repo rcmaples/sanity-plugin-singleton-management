@@ -23,7 +23,7 @@
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.esm.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.esm.d.ts",
   "browserslist": "extends @sanity/browserslist-config",
   "files": [
     "dist",
@@ -109,5 +109,15 @@
     "type": "git",
     "url": "https://github.com/rcmaples/sanity-plugin-singleton-management"
   },
-  "sideEffects": true
+  "sideEffects": true,
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": "./dist/index.esm.js",
+        "require": "./dist/index.cjs",
+        "default": "./dist/index.esm.js"
+      },
+      "./package.json": "./package.json"
+    }
+  }
 }
