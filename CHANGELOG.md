@@ -1,3 +1,11 @@
+## [1.0.6](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.5...v1.0.6) (2025-12-29)
+
+
+### Bug Fixes
+
+* correct module resolution for ESM type definitions ([5ced17a](https://github.com/rcmaples/sanity-plugin-singleton-management/commit/5ced17a147c13ebfc3bf1f4bea4b0d4ed7b12bba))
+* export SingletonPluginOptions type for module augmentation ([67570b6](https://github.com/rcmaples/sanity-plugin-singleton-management/commit/67570b66e9e63c918686f6b4e34131b4041380a0))
+
 ## [1.0.5](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.4...v1.0.5) (2025-12-11)
 
 
