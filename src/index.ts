@@ -11,3 +11,6 @@ export {
   singletonDocumentListItems,
   singletonTools,
 };
+
+// Re-export types for module augmentation
+export type { SingletonPluginOptions } from "./types";
