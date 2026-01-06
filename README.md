@@ -20,23 +20,23 @@ While Sanity Studio supports singleton documents through the Structure Builder A
 plugin eliminates the repetitive boilerplate and provides additional safeguards:
 
 ### Native Sanity Approach
+
 ```js
 // Requires manual Structure Builder configuration for each singleton
 export const structure = (S) =>
   S.list()
-    .title('Content')
+    .title("Content")
     .items([
       S.listItem()
-        .title('Site Settings')
+        .title("Site Settings")
         .child(
-          S.document()
-            .schemaType('siteSettings')
-            .documentId('siteSettings')
+          S.document().schemaType("siteSettings").documentId("siteSettings"),
         ),
       // Must manually filter out singletons from main list
-      ...S.documentTypeListItems().filter(listItem =>
-        !['siteSettings'].includes(listItem.getId()))
-    ])
+      ...S.documentTypeListItems().filter(
+        (listItem) => !["siteSettings"].includes(listItem.getId()),
+      ),
+    ]);
 ```
 
 **Issues:**
@@ -45,7 +45,6 @@ export const structure = (S) =>
 - No prevention of duplicate document creation
 - Users can still create new versions via global Create menu
 - Manual filtering required to prevent duplicates in document lists
-
 
 **With This Plugin:**
 
@@ -72,21 +71,21 @@ export const mySingleton = defineType({
 ```
 
 ```js
-  // structure.js/ts
-  export const structure = (S, context) =>
-    S.list()
-      .items([
-        ...singletonDocumentListItems({ S, context }), // Auto-generates all singletons
-        ...filteredDocumentListItems({ S, context })   // Auto-filters singletons from main list
-      ])
+// structure.js/ts
+export const structure = (S, context) =>
+  S.list().items([
+    ...singletonDocumentListItems({ S, context }), // Auto-generates all singletons
+    ...filteredDocumentListItems({ S, context }), // Auto-filters singletons from main list
+  ]);
 ```
 
-  Benefits:
-  - ✅ Minimal configuration with `singleton: true`
-  - ✅ Automatic action restrictions (no duplicate creation)
-  - ✅ Global Create menu integration
-  - ✅ Helper functions eliminate boilerplate
-  - ✅ Consistent singleton behavior across your studio
+Benefits:
+
+- ✅ Minimal configuration with `singleton: true`
+- ✅ Automatic action restrictions (no duplicate creation)
+- ✅ Global Create menu integration
+- ✅ Helper functions eliminate boilerplate
+- ✅ Consistent singleton behavior across your studio
 
 ## Installation
 
@@ -99,17 +98,21 @@ npm install sanity-plugin-singleton-management
 This plugin is a modernized, actively maintained fork of `sanity-plugin-singleton-tools` with identical API compatibility. Migration is straightforward:
 
 ### Steps
+
 1. **Uninstall the old package**:
+
    ```sh
    npm uninstall sanity-plugin-singleton-tools
    ```
 
 2. **Install this package**:
+
    ```sh
    npm install sanity-plugin-singleton-management
    ```
 
 3. **Update your import statements**:
+
    ```diff
    // sanity.config.js
    - import { singletonTools } from 'sanity-plugin-singleton-tools'
@@ -123,6 +126,7 @@ This plugin is a modernized, actively maintained fork of `sanity-plugin-singleto
 **That's it!** No other code changes are required. Your existing schema configurations and structure customizations will work exactly the same.
 
 ### What's New
+
 - ✅ **React 18/19 Support**: Compatible with modern React versions
 - ✅ **Sanity v3/v4 Support**: Works with both Sanity Studio versions
 - ✅ **Modern Tooling**: ESM/CommonJS dual package, better TypeScript support
@@ -205,7 +209,7 @@ Other reading (Sanity docs):
 
 ## Credits
 
-This project is a fork of [sanity-plugin-singleton-tools](https://github.com/plsrd/sanity-plugin-singleton-tools) 
+This project is a fork of [sanity-plugin-singleton-tools](https://github.com/plsrd/sanity-plugin-singleton-tools)
 originally created by [RD Pennell](https://github.com/plsrd).
 
 ## License
