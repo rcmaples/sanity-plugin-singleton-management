@@ -55,7 +55,7 @@
   "devDependencies": {
     "@commitlint/cli": "^20.3.0",
     "@commitlint/config-conventional": "^20.0.0",
-    "@commitlint/prompt-cli": "^20.3.0",
+    "@commitlint/prompt-cli": "^20.3.1",
     "@sanity/browserslist-config": "^1.0.5",
     "@sanity/pkg-utils": "^10.2.5",
     "@sanity/plugin-kit": "^4.0.20",
@@ -64,9 +64,9 @@
     "@semantic-release/github": "^11.0.6",
     "@semantic-release/npm": "^13.1.2",
     "@testing-library/jest-dom": "^6.4.6",
-    "@types/react": "^19.2.7",
-    "@typescript-eslint/eslint-plugin": "^8.51.0",
-    "@typescript-eslint/parser": "^8.50.1",
+    "@types/react": "^19.2.8",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
     "@vitest/coverage-v8": "^4.0.4",
     "@vitest/ui": "^4.0.1",
     "eslint": "^9.35.0",
@@ -88,7 +88,7 @@
     "semantic-release": "^25.0.2",
     "styled-components": "^6.1.15",
     "typescript": "^5.3.3",
-    "typescript-eslint": "^8.51.0",
+    "typescript-eslint": "^8.52.0",
     "vitest": "^4.0.1"
   },
   "overrides": {
@@ -96,7 +96,8 @@
     "prismjs": "1.30.0",
     "tmp": "0.2.4",
     "min-document": "2.19.0",
-    "glob": "^10.5.0"
+    "glob": "^10.5.0",
+    "undici": "^6.23.0"
   },
   "peerDependencies": {
     "react": "^18 || ^19.2.1",
