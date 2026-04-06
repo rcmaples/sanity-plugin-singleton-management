@@ -4,6 +4,7 @@ Brief description of changes.
 
 ## Type of Change
 
+- [ ] Dependancy update(s)
 - [ ] Bug fix
 - [ ] New feature
 - [ ] Breaking change
@@ -21,4 +22,3 @@ Brief description of changes.
 - [ ] I have tested these changes locally
 - [ ] I have updated documentation if needed
 - [ ] I have added tests for new functionality
-- [ ] I have updated CHANGELOG.md
