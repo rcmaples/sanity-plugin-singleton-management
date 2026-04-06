@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.6...v1.0.7) (2026-04-06)
+
+
+### Bug Fixes
+
+* resolve lock file sync issues for Node 20 CI ([7416e1a](https://github.com/rcmaples/sanity-plugin-singleton-management/commit/7416e1ab97234a79b2f9cd4cbeb3d1573d82fab5))
+
 ## [1.0.6](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.5...v1.0.6) (2025-12-29)
 
 ### Bug Fixes
