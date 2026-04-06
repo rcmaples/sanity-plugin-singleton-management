@@ -76,3 +76,7 @@ test-results.xml
 !.env.example
 .secrets*
 !.secrets.example
+
+# AI coding assistants
+.claude
+.kilo
