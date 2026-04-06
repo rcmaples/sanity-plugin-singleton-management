@@ -53,9 +53,13 @@
     "@sanity/incompatible-plugin": "^1.0.5"
   },
   "devDependencies": {
+    "@emnapi/core": "^1.9.2",
+    "@emnapi/runtime": "^1.9.2",
     "@commitlint/cli": "^20.4.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@commitlint/prompt-cli": "^20.3.1",
+    "@eslint-react/eslint-plugin": "^4.2.3",
+    "@eslint/js": "^10.0.1",
     "@sanity/browserslist-config": "^1.0.5",
     "@sanity/pkg-utils": "^10.4.1",
     "@sanity/plugin-kit": "^4.0.20",
@@ -65,19 +69,12 @@
     "@semantic-release/npm": "^13.1.5",
     "@testing-library/jest-dom": "^6.4.6",
     "@types/react": "^19.2.9",
-    "@typescript-eslint/eslint-plugin": "^8.56.0",
-    "@typescript-eslint/parser": "^8.56.0",
     "@vitest/coverage-v8": "^4.1.2",
     "@vitest/ui": "^4.1.2",
-    "eslint": "^9.35.0",
+    "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-config-sanity": "^7.1.4",
-    "eslint-plugin-package-json": "^0.91.1",
-    "eslint-plugin-prettier": "^5.5.5",
-    "eslint-plugin-react": "^7.34.0",
-    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-react-hooks": "7.1.0-canary-ed69815c-20260323",
     "husky": "^9.1.7",
-    "jsdom": "^29.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.2.5",
     "prettier-plugin-packagejson": "^3.0.0",
@@ -85,11 +82,11 @@
     "react-dom": "^19.2.4",
     "react-is": "^19.2.3",
     "rimraf": "^6.0.1",
-    "sanity": "^5.18.0",
+    "sanity": "^5.19.0",
     "semantic-release": "^25.0.3",
     "styled-components": "^6.3.8",
-    "typescript": "^5.3.3",
-    "typescript-eslint": "^8.52.0",
+    "typescript": "^6.0.2",
+    "typescript-eslint": "^8.58.0",
     "vitest": "^4.1.2"
   },
   "overrides": {
@@ -102,14 +99,16 @@
     "glob": "^10.5.0",
     "flatted": "^3.4.2",
     "js-yaml": "^3.14.2",
+    "ajv": "^8.18.0",
+    "lodash": "^4.18.0",
+    "brace-expansion": "^5.0.5",
+    "picomatch": "^4.0.4",
+    "typescript": "^6.0.2",
     "eslint": {
       "ajv": "^6.14.0"
     },
-    "@eslint/eslintrc": {
-      "ajv": "^6.14.0"
-    },
-    "@sanity/plugin-kit": {
-      "ajv": "^8.17.2"
+    "@sanity/pkg-utils": {
+      "typescript": "^6.0.2"
     }
   },
   "peerDependencies": {
@@ -117,7 +116,7 @@
     "sanity": "^3 || ^4 || ^5.0.0-0"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.19.0"
   },
   "repository": {
     "type": "git",
