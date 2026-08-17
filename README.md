@@ -2,7 +2,7 @@
 
 # sanity-plugin-singleton-tools
 
-> This is compatible with Sanity versions 3.x, 4.x, and 5.x.
+> This is compatible with Sanity versions 3.x, 4.x, 5.x, and 6.x.
 
 ## What does this plugin do?
 
