@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.7...v1.1.0) (2026-08-17)
+
+
+### Features
+
+* support sanity v6 ([413cf77](https://github.com/rcmaples/sanity-plugin-singleton-management/commit/413cf77cee4c320b5d2c252e961d9f9c5e349177))
+
 ## [1.0.7](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.6...v1.0.7) (2026-04-06)
 
 
