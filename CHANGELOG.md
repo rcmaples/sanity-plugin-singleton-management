@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.1.0...v1.1.1) (2026-08-24)
+
+
+### Bug Fixes
+
+* updating document icon import to match new Sanity pattern ([b27de0f](https://github.com/rcmaples/sanity-plugin-singleton-management/commit/b27de0f33f4e96449924fd93c3e41308fc9b0b76))
+
 # [1.1.0](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.0.7...v1.1.0) (2026-08-17)
 
 
