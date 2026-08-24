@@ -1,4 +1,4 @@
-import { DocumentIcon } from "@sanity/icons";
+import { DocumentIcon } from "@sanity/icons/Document";
 import type { ListItemBuilder } from "sanity/structure";
 
 import { getSingletonDocuments } from "../helpers";
