@@ -69,7 +69,7 @@
     "@semantic-release/npm": "^13.1.5",
     "@testing-library/jest-dom": "^7.0.1",
     "@types/react": "^19.2.18",
-    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/coverage-v8": "^5.0.0",
     "@vitest/ui": "^4.1.10",
     "eslint": "^10.8.1",
     "eslint-config-prettier": "^10.1.8",
