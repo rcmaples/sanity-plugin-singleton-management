@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.1.1...v1.1.2) (2026-10-21)
+
+
+### Bug Fixes
+
+* bump @sanity/plugin-kit to resolve pkg-utils peer conflict ([5fff759](https://github.com/rcmaples/sanity-plugin-singleton-management/commit/5fff7594a90e72ee291194abe9d9ab6a4b84458b))
+
 ## [1.1.1](https://github.com/rcmaples/sanity-plugin-singleton-management/compare/v1.1.0...v1.1.1) (2026-08-24)
 
 
